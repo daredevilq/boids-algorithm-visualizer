@@ -24,7 +24,7 @@ int main()
     float minSpeedSlider = 1.0f;
     float maxSpeedSlider = 2.0f;
     float maxForceSlider = 0.1f;
-
+    float boidsNumberSlider = 500;
     
     //SetConfigFlags(FLAG_MSAA_4X_HINT);
 
@@ -32,7 +32,7 @@ int main()
     SetTargetFPS(120);
 
     Simulation simulation(SCREEN_WIDTH, SCREEEN_HEIGHT);
-    simulation.initialBoidNumber = 500;
+    simulation.boidsNumber = boidsNumberSlider;
     simulation.setNumberBoids();
     bool showMessageBox = false;
     long frame = 0;
@@ -45,6 +45,7 @@ int main()
         simulation.cohesionCoefficient = cohesionCoefficientSlider;
         simulation.maxForce = maxForceSlider;
         simulation.maxSpeed = maxForceSlider;
+        simulation.boidsNumber = boidsNumberSlider;
 
         if (frame % 100 == 1)
         {
@@ -69,8 +70,8 @@ int main()
             simulation.mouseClickPosition = GetMousePosition();
         }
         else {
-            simulation.mouseClickPosition.x = -1;
-            simulation.mouseClickPosition.y = -1;
+            simulation.mouseClickPosition.x = INT_MIN;
+            simulation.mouseClickPosition.y = INT_MIN;
         }
 
         
@@ -94,7 +95,9 @@ int main()
 
         GuiSliderBar({ SCREEN_WIDTH - 300, 240, 150, 20 }, "Maximum Speed", NULL, &maxSpeedSlider, 0, 5);
 
-        simulation.resetTracking = GuiButton({ SCREEN_WIDTH - 300, 270, 150, 20 }, "Reset Tracking");
+        GuiSliderBar({ SCREEN_WIDTH - 300, 270, 150, 20 }, "Boids Number", NULL, &boidsNumberSlider, 0, 1000);
+
+        simulation.resetTracking = GuiButton({ SCREEN_WIDTH - 300, 310, 150, 20 }, "Reset Tracking");
 
         EndDrawing();
     }

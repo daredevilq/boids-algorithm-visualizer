@@ -32,14 +32,28 @@ void Simulation::addBoid() {
 	this->boids.push_back(newBoid);
 }
 
+void Simulation::removeBoid() {
+	this->boids.pop_back();
+}
+
 void Simulation::setNumberBoids() {
-	for (int i = 0; i < this->initialBoidNumber; i++)
-	{
-		addBoid();
+
+	if (this->boids.size() > (int)boidsNumber) {
+		while (this->boids.size() > (int)boidsNumber) {
+			this->removeBoid();
+		}
 	}
+		
+	if (this->boids.size() < (int)boidsNumber) {
+		while (this->boids.size() < (int)boidsNumber) {
+			addBoid();
+		}
+	}
+
 }
 
 void Simulation::updateBoids() {
+	this->setNumberBoids();
 	for (Boid* boid : this->boids) {
 		boid->computeForce();
 	}
