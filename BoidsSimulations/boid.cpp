@@ -142,7 +142,7 @@ void Boid::draw() const {
     Vector2 left{normalizedVelocityVector.y * 1 ,  -1 * normalizedVelocityVector.x};
     Vector2 right{ -1 * normalizedVelocityVector.y, 1* normalizedVelocityVector.x };
    
-    DrawTriangle(Vector2Add(position, normalizedVelocityVector), Vector2Add(position, left), Vector2Add(position, right), RED);
+    DrawTriangle(Vector2Add(position, normalizedVelocityVector), Vector2Add(position, left), Vector2Add(position, right), WHITE);
     
         
     //DrawCircle(position.x, position.y, 5, RED);

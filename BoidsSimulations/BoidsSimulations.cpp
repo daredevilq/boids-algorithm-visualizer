@@ -65,7 +65,7 @@ int main()
         simulation.updateBoids();
         // Draw
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(BLACK);
         simulation.drawBoids();
 
         GuiSliderBar({ SCREEN_WIDTH - 300, 90, 150, 20 }, "Visual Range", NULL, & visualRangeRadiusSlider, 0, 1000);
