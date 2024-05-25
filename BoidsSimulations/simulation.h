@@ -11,11 +11,11 @@ class Simulation
 		float minSpeed = 1.; // 1.
 		float maxSpeed = 2.; //2.
 		float maxForce = 0.1 ;
-
+		Vector2 mouseClickPosition{ -1., -1. };
 		float separationCoefficient = 0.5;
 		float alignCoefficient = 0.3;
 		float cohesionCoefficient = 0.5;
-
+		int resetTracking = 0;
 
 
 		Simulation(int width, int height);

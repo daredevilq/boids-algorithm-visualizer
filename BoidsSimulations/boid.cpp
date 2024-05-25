@@ -98,7 +98,7 @@ void Boid::computeForce() {
 
 
 // Funkcja update dla aktualizacji pozycji i prêdkoœci boida
-void Boid::update() {
+void Boid::update(Vector2 *mouseClickPosition) {
  
 
     // Ograniczenie przyspieszenia do maxForce
@@ -109,6 +109,13 @@ void Boid::update() {
     this->velocity = Vector2ClampValue(this->velocity, this->simulation->minSpeed, this->simulation->maxSpeed);
     this->position = Vector2Add(this->position, this->velocity);
 
+    this->clickBoidHanlder(mouseClickPosition);
+    if (simulation->resetTracking == 1)
+    {
+        this->isMarked = false;
+        this->boidColor = WHITE;
+    }
+
     // Owijanie wokó³ ekranu
     if (this->position.x > simulation->width) this->position.x = 0;
     if (this->position.x < 0) this->position.x = simulation->width;
@@ -117,17 +124,40 @@ void Boid::update() {
 }
 
 // Funkcja draw dla rysowania boida
-void Boid::draw() const {
+void Boid::draw() {
     
-
 
     Vector2 normalizedVelocityVector{ 10 *Vector2Normalize(velocity).x, 10 * Vector2Normalize(velocity).y };
 
     Vector2 left{normalizedVelocityVector.y * 1 ,  -1 * normalizedVelocityVector.x};
     Vector2 right{ -1 * normalizedVelocityVector.y, 1* normalizedVelocityVector.x };
    
-    DrawTriangle(Vector2Add(position, normalizedVelocityVector), Vector2Add(position, left), Vector2Add(position, right), WHITE);
     
+    this->tip = Vector2Add(position, normalizedVelocityVector);
+    this->leftTip = Vector2Add(position, left);
+    this->rightTip = Vector2Add(position, right);
+
+    DrawTriangle(tip, leftTip, rightTip, this->boidColor);
+    
+    if (this->isMarked)
+    {
+        DrawCircleLines(position.x, position.y, simulation->visualRangeRadius, RED);
+        //DrawLine(position.x, position.y, 1* (position.x + acceleration.x), 1* (position.y + acceleration.y), GREEN);
         
-    //DrawCircle(position.x, position.y, 5, RED);
+    }
+        
+}
+
+
+bool Boid::checkIfTriangleContainsPoint(Vector2 point) {
+    return CheckCollisionPointTriangle(point, this->tip, this->leftTip, this->rightTip);
+}
+
+void Boid::clickBoidHanlder(Vector2 *point) {
+
+    if (checkIfTriangleContainsPoint(*point))
+    {
+       isMarked = true;
+       boidColor = RED;
+    }
 }

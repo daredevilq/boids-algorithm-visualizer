@@ -44,8 +44,9 @@ void Simulation::updateBoids() {
 		boid->computeForce();
 	}
 	for (Boid* boid : this->boids) {
-		boid->update();
+		boid->update(&mouseClickPosition);
 	}
+	this->resetTracking = 0;
 }
 
 

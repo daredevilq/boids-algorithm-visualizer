@@ -25,6 +25,7 @@ int main()
     float maxSpeedSlider = 2.0f;
     float maxForceSlider = 0.1f;
 
+   
 
     InitWindow(SCREEN_WIDTH, SCREEEN_HEIGHT, "Boid Simulation");
     SetTargetFPS(120);
@@ -61,6 +62,18 @@ int main()
         }
         frame++;
 
+
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            simulation.mouseClickPosition = GetMousePosition();
+        }
+        else {
+            simulation.mouseClickPosition.x = -1;
+            simulation.mouseClickPosition.y = -1;
+        }
+
+        
+
         // Update simulation
         simulation.updateBoids();
         // Draw
@@ -79,6 +92,8 @@ int main()
         GuiSliderBar({ SCREEN_WIDTH - 300, 210, 150, 20 }, "Maximum Force", NULL, &maxForceSlider, 0, 1);
 
         GuiSliderBar({ SCREEN_WIDTH - 300, 240, 150, 20 }, "Maximum Speed", NULL, &maxSpeedSlider, 0, 5);
+
+        simulation.resetTracking = GuiButton({ SCREEN_WIDTH - 300, 270, 150, 20 }, "Reset Tracking");
 
         EndDrawing();
     }
