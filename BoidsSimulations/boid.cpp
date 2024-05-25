@@ -134,5 +134,16 @@ void Boid::update() {
 
 // Funkcja draw dla rysowania boida
 void Boid::draw() const {
-    DrawCircle(position.x, position.y, 5, RED);
+    
+
+
+    Vector2 normalizedVelocityVector{ 10 *Vector2Normalize(velocity).x, 10 * Vector2Normalize(velocity).y };
+
+    Vector2 left{normalizedVelocityVector.y * 1 ,  -1 * normalizedVelocityVector.x};
+    Vector2 right{ -1 * normalizedVelocityVector.y, 1* normalizedVelocityVector.x };
+   
+    DrawTriangle(Vector2Add(position, normalizedVelocityVector), Vector2Add(position, left), Vector2Add(position, right), RED);
+    
+        
+    //DrawCircle(position.x, position.y, 5, RED);
 }
