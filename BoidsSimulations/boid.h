@@ -14,11 +14,13 @@ public:
     void alignment();
     void cohesion();
     void separation();
+    void computeForce();
+
     Vector2 position;
     Vector2 velocity;
     Vector2 acceleration;
     Simulation* simulation;
-
+    
 
     Vector2 tempSeparation;
     Vector2 tempCohesion;

@@ -41,6 +41,11 @@ void Simulation::setNumberBoids() {
 
 void Simulation::updateBoids() {
 	for (Boid* boid : this->boids) {
+		boid->computeForce();
+	}
+	for (Boid* boid : this->boids) {
 		boid->update();
 	}
 }
+
+

@@ -26,6 +26,5 @@ class Simulation
 		void setNumberBoids();
 		void addBoid();
 
-		
 	};
 
