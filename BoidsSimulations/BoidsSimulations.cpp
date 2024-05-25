@@ -25,7 +25,8 @@ int main()
     float maxSpeedSlider = 2.0f;
     float maxForceSlider = 0.1f;
 
-   
+    
+    //SetConfigFlags(FLAG_MSAA_4X_HINT);
 
     InitWindow(SCREEN_WIDTH, SCREEEN_HEIGHT, "Boid Simulation");
     SetTargetFPS(120);

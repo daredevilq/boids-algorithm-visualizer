@@ -140,9 +140,10 @@ void Boid::draw() {
     DrawTriangle(tip, leftTip, rightTip, this->boidColor);
     
     if (this->isMarked)
-    {
+    {   
         DrawCircleLines(position.x, position.y, simulation->visualRangeRadius, RED);
-        //DrawLine(position.x, position.y, 1* (position.x + acceleration.x), 1* (position.y + acceleration.y), GREEN);
+        DrawLine(position.x, position.y,  (position.x +  (-FORCE_VISUALIZE_MULTIPLIER* acceleration.x)), (position.y+ (-FORCE_VISUALIZE_MULTIPLIER * acceleration.y)), GREEN);
+        
         
     }
         

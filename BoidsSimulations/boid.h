@@ -3,6 +3,7 @@
 
 #include <raylib.h>
 #include <vector>
+#include "simulation_specs.h"
 
 class Simulation;
 
