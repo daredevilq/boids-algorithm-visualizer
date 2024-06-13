@@ -127,10 +127,10 @@ void Boid::update(Vector2 *mouseClickPosition) {
 void Boid::draw() {
     
 
-    Vector2 normalizedVelocityVector{ 10 *Vector2Normalize(velocity).x, 10 * Vector2Normalize(velocity).y };
+    Vector2 normalizedVelocityVector{ 10* Vector2Normalize(velocity).x, 10* Vector2Normalize(velocity).y };
 
-    Vector2 left{normalizedVelocityVector.y * 1 ,  -1 * normalizedVelocityVector.x};
-    Vector2 right{ -1 * normalizedVelocityVector.y, 1* normalizedVelocityVector.x };
+    Vector2 left{normalizedVelocityVector.y * 0.5 ,  -0.5 * normalizedVelocityVector.x};
+    Vector2 right{ -0.5 * normalizedVelocityVector.y, 0.5 * normalizedVelocityVector.x };
    
     
     this->tip = Vector2Add(position, normalizedVelocityVector);

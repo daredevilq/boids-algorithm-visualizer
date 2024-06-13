@@ -91,9 +91,9 @@ int main()
 
         GuiSliderBar({ SCREEN_WIDTH - 300, 180, 150, 20 }, "Cohesion Coefficient", NULL, &cohesionCoefficientSlider, 0, 1);
 
-        GuiSliderBar({ SCREEN_WIDTH - 300, 210, 150, 20 }, "Maximum Force", NULL, &maxForceSlider, 0, 1);
+        GuiSliderBar({ SCREEN_WIDTH - 300, 210, 150, 20 }, "Maximum Force", NULL, &maxForceSlider, 0.001, 1);
 
-        GuiSliderBar({ SCREEN_WIDTH - 300, 240, 150, 20 }, "Maximum Speed", NULL, &maxSpeedSlider, 0, 5);
+        GuiSliderBar({ SCREEN_WIDTH - 300, 240, 150, 20 }, "Maximum Speed", NULL, &maxSpeedSlider, 0.001, 5);
 
         GuiSliderBar({ SCREEN_WIDTH - 300, 270, 150, 20 }, "Boids Number", NULL, &boidsNumberSlider, 0, 1000);
 
