@@ -32,12 +32,15 @@ Upon launching the program, we have several sliders that we can use.
 Visual Range - the field of vision of the boid.
 We can adjust the strength of each of the three previously mentioned rules:
 
-Alignment Coefficient
-Separation Coefficient
-Cohesion Coefficient
-We can also adjust the strength with which these rules affect the boids.
+**Alignment Coefficient**
 
-We can also adjust the number of boids using a slider.
+**Separation Coefficient**
+
+**Cohesion Coefficient**
+
+We can also adjust the ****force** with which these rules affect the boids.
+
+We can also adjust the ****number of boids**** using a slider.
 
 Importantly, we can click on a selected boid – it will then be highlighted, and we will see its visual range in red and a green arrow showing the current strength acting on the boid.
 
