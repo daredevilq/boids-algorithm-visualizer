@@ -42,6 +42,13 @@ We can also adjust the number of boids using a slider.
 Importantly, we can click on a selected boid – it will then be highlighted, and we will see its visual range in red and a green arrow showing the current strength acting on the boid.
 
 
+
+https://github.com/daredevilq/boids-algorithm-visualizer/assets/110993908/635a8598-8d6d-4fa4-bd3d-b3adbe765aac
+
+
+
+
+
 # Dependencies
 
 [Raylib Site](https://www.raylib.com/)
