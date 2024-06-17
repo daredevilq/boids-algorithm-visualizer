@@ -23,11 +23,29 @@ Every bird attempts to move towards the average position of other nearby birds.
 <center>
 <img src="./docs/cohesion.png">
 </center>
-<p>
 
 
-</p>
+# Simulation Description
 
-<center>
-<video src="./docs/simulation.mp4" width="800" height="300" controls></video>
-</center>
+Upon launching the program, we have several sliders that we can use.
+
+Visual Range - the field of vision of the boid.
+We can adjust the strength of each of the three previously mentioned rules:
+
+Alignment Coefficient
+Separation Coefficient
+Cohesion Coefficient
+We can also adjust the strength with which these rules affect the boids.
+
+We can also adjust the number of boids using a slider.
+
+Importantly, we can click on a selected boid – it will then be highlighted, and we will see its visual range in red and a green arrow showing the current strength acting on the boid.
+
+
+# Dependencies
+
+[Raylib Site](https://www.raylib.com/)
+
+[Raylib source code](https://github.com/raysan5/raylib)
+
+raylib is a simple and easy-to-use library to enjoy videogames programming.
