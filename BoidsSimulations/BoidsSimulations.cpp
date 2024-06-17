@@ -64,7 +64,6 @@ int main()
         }
         frame++;
 
-
         if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
         {
             simulation.mouseClickPosition = GetMousePosition();
