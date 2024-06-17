@@ -23,3 +23,11 @@ Every bird attempts to move towards the average position of other nearby birds.
 <center>
 <img src="./docs/cohesion.png">
 </center>
+<p>
+
+
+</p>
+
+<center>
+<video src="./docs/simulation.mp4" width="800" height="300" controls></video>
+</center>
